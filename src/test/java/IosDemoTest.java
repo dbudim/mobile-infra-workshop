@@ -1,6 +1,6 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import emulators.IosLocal;
+import emulators.IosHub;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -16,7 +16,7 @@ public class IosDemoTest {
 
     @BeforeClass
     public void initDriver() {
-        Configuration.browser = IosLocal.class.getName();
+        Configuration.browser = IosHub.class.getName();
         Configuration.browserSize = null;
         open();
     }

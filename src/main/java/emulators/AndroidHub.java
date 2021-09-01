@@ -17,8 +17,8 @@ import static io.appium.java_client.remote.MobileCapabilityType.*;
 
 public class AndroidHub implements WebDriverProvider {
 
-    private static final String HUB_URL = "http://10.100.100.193:8080/wd/hub";
-    private static final String APP_URL = "https://github.com/cloudgrey-io/the-app/releases/download/v1.9.0/TheApp-v1.9.0.apk";
+    private static final String HUB_URL = "http://192.168.0.111:4444/wd/hub";
+    private static final String APP_URL = "https://github.com/appium/appium/raw/master/sample-code/apps/ApiDemos-debug.apk";
 
     @Override
     public WebDriver createDriver(@Nonnull DesiredCapabilities desiredCapabilities) {
@@ -26,12 +26,12 @@ public class AndroidHub implements WebDriverProvider {
         capabilities.setBrowserName("android");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("version", "10.0");
-        capabilities.setCapability("skin", "1080x2280");
         capabilities.setCapability(NEW_COMMAND_TIMEOUT, 90);
+        capabilities.setCapability("uiautomator2ServerInstallTimeout", 90000);
         capabilities.setCapability(ORIENTATION, "PORTRAIT");
         capabilities.setCapability(AUTOMATION_NAME, "UiAutomator2");
-        capabilities.setCapability("autoAcceptAlerts", true);
-        capabilities.setCapability(APP, APP_URL);
+        capabilities.setCapability("appActivity", ".ApiDemos");
+        capabilities.setCapability("app", APP_URL);
         try {
             return new AndroidDriver(new URL(HUB_URL), capabilities);
         } catch (MalformedURLException e) {
