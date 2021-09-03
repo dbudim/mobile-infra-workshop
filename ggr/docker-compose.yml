@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+  ggr:
+    container_name: ggr
+    image: aerokube/ggr:latest-release
+    ports:
+      - "4445:4444"
+    command: -timeout 300s
+    volumes:
+      - /etc/grid-router/:/etc/grid-router:ro
+    restart: unless-stopped
+  ggr-ui:
+    container_name: ggr-ui
+    image: aerokube/ggr-ui:latest-release
+    ports:
+      - "8888:8888"
+    volumes:
+      - /etc/grid-router/:/etc/grid-router:ro
+    restart: unless-stopped
+  selenoid-ui:
+    container_name: selenoid-ui
+    image: aerokube/selenoid-ui:1.10.1
+    command: -selenoid-uri=http://ggr:4445 -status-uri=http://ggr-ui:8888
+    ports:
+      - "8081:8080"
+    restart: unless-stopped

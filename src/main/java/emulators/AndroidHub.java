@@ -17,7 +17,8 @@ import static io.appium.java_client.remote.MobileCapabilityType.*;
 
 public class AndroidHub implements WebDriverProvider {
 
-    private static final String HUB_URL = "http://192.168.0.111:4444/wd/hub";
+    private static final String SELENOID_URL = "http://192.168.0.111:4444/wd/hub";
+    private static final String GGR_URL = "http://aqa:123456@192.168.0.111:4445/wd/hub";
     private static final String APP_URL = "https://github.com/appium/appium/raw/master/sample-code/apps/ApiDemos-debug.apk";
 
     @Override
@@ -33,7 +34,7 @@ public class AndroidHub implements WebDriverProvider {
         capabilities.setCapability("appActivity", ".ApiDemos");
         capabilities.setCapability("app", APP_URL);
         try {
-            return new AndroidDriver(new URL(HUB_URL), capabilities);
+            return new AndroidDriver(new URL(GGR_URL), capabilities);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
