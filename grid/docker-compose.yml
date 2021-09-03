@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  grid:
+    container_name: grid
+    image: selenium/hub:3.141.59
+    environment:
+      - GRID_TIMEOUT=140
+      - GRID_BROWSER_TIMEOUT=120
+    ports:
+      - "4445:4444"
+    restart: unless-stopped
