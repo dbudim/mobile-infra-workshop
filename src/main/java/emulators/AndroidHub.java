@@ -34,7 +34,7 @@ public class AndroidHub implements WebDriverProvider {
         capabilities.setCapability("appActivity", ".ApiDemos");
         capabilities.setCapability("app", APP_URL);
         try {
-            return new AndroidDriver(new URL(GGR_URL), capabilities);
+            return new AndroidDriver(new URL(SELENOID_URL), capabilities);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
