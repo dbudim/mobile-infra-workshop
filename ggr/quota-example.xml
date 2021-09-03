@@ -6,5 +6,11 @@
                 <host name="192.168.0.111" port="4446" count="2"/>
             </region>
         </version>
+        <version number="9.0">
+            <region name="1">
+                <host name="192.168.0.111" port="4444" count="2"/>
+                <host name="192.168.0.111" port="4446" count="2"/>
+            </region>
+        </version>
     </browser>
 </qa:browsers>
