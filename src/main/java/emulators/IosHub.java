@@ -18,7 +18,7 @@ import static org.openqa.selenium.remote.CapabilityType.PLATFORM_NAME;
 
 public class IosHub implements WebDriverProvider {
 
-    private static final String HUB_URL = "http://0.0.0.0:4723/wd/hub";
+    private static final String HUB_URL = "http://0.0.0.0:4445/wd/hub";
     private static final String APP_URL = "https://github.com/appium/appium/raw/master/sample-code/apps/TestApp.app.zip";
 
     @Override
