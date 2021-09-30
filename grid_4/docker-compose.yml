@@ -19,6 +19,7 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_HOST=grid-4
+
   node-2:
     container_name: node-2
     image: selenium/node-docker:4.0.0-rc-2-prerelease-20210916
