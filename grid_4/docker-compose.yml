@@ -1,0 +1,32 @@
+version: "3.3"
+services:
+  grid-4:
+    container_name: grid-4
+    image: selenium/hub:4.0.0-rc-2-prerelease-20210916
+    environment:
+      - GRID_TIMEOUT=140
+      - GRID_BROWSER_TIMEOUT=120
+    ports:
+      - "4442-4444:4442-4444"
+
+  node-1:
+    container_name: node-1
+    image: selenium/node-docker:4.0.0-rc-2-prerelease-20210916
+    volumes:
+      - "${PWD}/config1.toml:/opt/bin/config.toml"
+    environment:
+      - SE_EVENT_BUS_HOST=grid-4
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_HOST=grid-4
+  node-2:
+    container_name: node-2
+    image: selenium/node-docker:4.0.0-rc-2-prerelease-20210916
+    volumes:
+      - "${PWD}/config2.toml:/opt/bin/config.toml"
+    environment:
+      - SE_EVENT_BUS_HOST=grid-4
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_HOST=grid-4
+

@@ -1,0 +1,9 @@
+[node]
+detect-drivers = false
+
+[relay]
+url = "http://192.168.0.102:4724/wd/hub"
+status-endpoint = "/status"
+configs = [
+  "1", "{\"browserName\": \"iPhone 12 Pro Max\", \"platformName\": \"iOS\", \"appium:platformVersion\": \"15.0\"}"
+]
