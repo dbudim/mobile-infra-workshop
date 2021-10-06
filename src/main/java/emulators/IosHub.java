@@ -25,7 +25,7 @@ public class IosHub implements WebDriverProvider {
     public WebDriver createDriver(@Nonnull DesiredCapabilities desiredCapabilities) {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(PLATFORM_NAME, "iOS");
-        capabilities.setCapability(PLATFORM_VERSION, "14.5");
+        capabilities.setCapability(PLATFORM_VERSION, "15.0");
         capabilities.setCapability(DEVICE_NAME, "iPhone 12 Pro Max");
         capabilities.setCapability(NO_RESET, false);
         capabilities.setCapability(FULL_RESET, false);
