@@ -2,7 +2,7 @@ version: "3.3"
 services:
   grid-4:
     container_name: grid-4
-    image: selenium/hub:4.0.0-rc-2-prerelease-20210916
+    image: selenium/hub:4.0.0
     environment:
       - GRID_TIMEOUT=140
       - GRID_BROWSER_TIMEOUT=120
@@ -11,7 +11,7 @@ services:
 
   node-1:
     container_name: node-1
-    image: selenium/node-docker:4.0.0-rc-2-prerelease-20210916
+    image: selenium/node-docker:4.0.0
     volumes:
       - "${PWD}/config1.toml:/opt/bin/config.toml"
     environment:
@@ -22,7 +22,7 @@ services:
 
   node-2:
     container_name: node-2
-    image: selenium/node-docker:4.0.0-rc-2-prerelease-20210916
+    image: selenium/node-docker:4.0.0
     volumes:
       - "${PWD}/config2.toml:/opt/bin/config.toml"
     environment:
