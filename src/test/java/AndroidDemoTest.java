@@ -28,7 +28,6 @@ public class AndroidDemoTest {
     public void testDemo() {
         $(By.xpath("//*[@content-desc='Search Wikipedia'][1]")).click();
         $(By.xpath("//*[@content-desc='Clear query']")).shouldBe(Condition.visible);
-        $(By.xpath("//*[@content-desc='Search Wikipedia'][1]")).shouldBe(Condition.visible);
     }
 
     @AfterMethod
